@@ -39,17 +39,26 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     knob.lineWidth = 4
     knob.pointerLength = 12
+    
+    knob.setValue(valueSlider.value)
+    updateLabel()
   }
   
   @IBAction func handleValueChanged(_ sender: Any) {
     // link slider to knob
     knob.setValue(valueSlider.value)
+    updateLabel()
   }
   
   @IBAction func handleRandomButtonPressed(_ sender: Any) {
     let randomValue = Float(arc4random_uniform(101)) / 100.0
     knob.setValue(randomValue, animated: animateSwitch.isOn)
     valueSlider.setValue(Float(randomValue), animated: animateSwitch.isOn)
+    updateLabel()
+  }
+  
+  func updateLabel() {
+    valueLabel.text = String(format: "%.2f", knob.value)
   }
 }
 
