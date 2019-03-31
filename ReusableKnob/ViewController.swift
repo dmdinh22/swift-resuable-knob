@@ -42,7 +42,8 @@ class ViewController: UIViewController {
   }
   
   @IBAction func handleValueChanged(_ sender: Any) {
-
+    // link slider to knob
+    knob.setValue(valueSlider.value)
   }
   
   @IBAction func handleRandomButtonPressed(_ sender: Any) {
