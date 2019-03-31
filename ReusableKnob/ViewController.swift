@@ -33,7 +33,8 @@ class ViewController: UIViewController {
   @IBOutlet var valueLabel: UILabel!
   @IBOutlet var valueSlider: UISlider!
   @IBOutlet var animateSwitch: UISwitch!
-
+  @IBOutlet weak var knob: Knob!
+    
   override func viewDidLoad() {
     super.viewDidLoad()
   }
