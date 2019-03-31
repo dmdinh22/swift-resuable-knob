@@ -47,6 +47,9 @@ class ViewController: UIViewController {
   }
   
   @IBAction func handleRandomButtonPressed(_ sender: Any) {
-
+    let randomValue = Float(arc4random_uniform(101)) / 100.0
+    knob.setValue(randomValue, animated: animateSwitch.isOn)
+    valueSlider.setValue(Float(randomValue), animated: animateSwitch.isOn)
   }
 }
+
