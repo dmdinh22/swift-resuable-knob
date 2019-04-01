@@ -42,11 +42,18 @@ class ViewController: UIViewController {
     
     knob.setValue(valueSlider.value)
     updateLabel()
+    // wire up user interaction to knob
+    knob.addTarget(self, action: #selector(ViewController.handleValueChanged(_:)), for: .valueChanged)
   }
   
   @IBAction func handleValueChanged(_ sender: Any) {
     // link slider to knob
-    knob.setValue(valueSlider.value)
+    if sender is UISlider {
+      knob.setValue(valueSlider.value)
+    } else {
+      valueSlider.value = knob.value
+    }
+    
     updateLabel()
   }
   
