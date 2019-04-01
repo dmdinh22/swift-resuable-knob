@@ -120,6 +120,15 @@ class Knob: UIControl {
 
         // 5 - set knob's control value to calculated val
         setValue(angleValue)
+      
+      // fire event every time gesture sends an update if continuously moving
+      if isContinuous {
+        sendActions(for: .valueChanged)
+      } else {
+        if gesture.state == .ended || gesture.state == .cancelled {
+          sendActions(for: .valueChanged)
+        }
+      }
     }
 }
 
