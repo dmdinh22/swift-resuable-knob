@@ -128,7 +128,7 @@ class Knob: UIControl {
         if gesture.state == .ended || gesture.state == .cancelled {
           sendActions(for: .valueChanged)
         }
-      }
+      } 
     }
 }
 
