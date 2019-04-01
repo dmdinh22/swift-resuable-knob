@@ -189,7 +189,7 @@ private class KnobRenderer {
       animation.values = [pointerAngle, midAngleValue, newPointerAngle]
       // normalized times as percentages to reach animation values
       animation.keyTimes = [0.0, 0.5, 1.0]
-      animation.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)]
+      animation.timingFunctions = [CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)]
       
       pointerLayer.add(animation, forKey: nil)
     }
